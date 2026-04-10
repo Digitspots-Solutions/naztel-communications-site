@@ -1,0 +1,12 @@
+{
+  "primaryColor": "#0A0F1E",
+  "accentColor": "#00D4FF",
+  "bgColor": "#0A0F1E",
+  "textColor": "#E8EDF5",
+  "fontDisplay": "Space Grotesk",
+  "fontBody": "IBM Plex Sans",
+  "borderRadius": "6px",
+  "layoutStyle": "dark bold",
+  "uxPrinciple": "Modern, tech-forward interface with vibrant accents for product highlighting and clear information hierarchy",
+  "cssVariables": "--color-primary:#0A0F1E; --color-accent:#00D4FF; --color-bg:#0A0F1E; --color-text:#E8EDF5; --font-display:Space Grotesk; --font-body:IBM Plex Sans; --border-radius:6px;"
+}
