@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naztel Communications - Your Trusted Partner for Quality Mobile Accessories in Obubra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0A0F1E;
+            --color-accent: #00D4FF;
+            --color-bg: #0A0F1E;
+            --color-text: #E8EDF5;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+            --border-radius: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0, 212, 255, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+            border-left: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        section {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0s; }
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/5486136/pexels-photo-5486136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 15, 30, 0.75);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+            text-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-family: var(--font-display);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        #about {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(10, 15, 30, 0.95) 100%);
+        }
+
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--border-radius);
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            border-color: var(--color-accent);
+        }
+
+        .service-card h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            line-height: 1.8;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list strong {
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        #contact {
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.95) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+
+        .contact-card h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-card p {
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-content p {
+                font-size: 1.125rem;
+            }
+
+            .container {
+                padding: 48px 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.875rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 80px 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="#hero" class="logo">Naztel Communications</a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="hero">
+    <div class="hero-content">
+        <h1>Naztel Communications</h1>
+        <p>Welcome to Naztel Communications - Obubra's premier destination for authentic phone accessories. From premium screen protectors to fast chargers, power banks, earphones, phone cases, and more. We bring quality mobile technology solutions right to your doorstep in Ofatura and beyond.</p>
+        <a href="#contact" class="cta-button">Get In Touch</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="about-split">
+            <img src="https://images.pexels.com/photos/33845917/pexels-photo-33845917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Naztel Communications" class="about-image">
+            <div class="about-text">
+                <h2 class="section-title">About Us</h2>
+                <p>Naztel Communications has been serving the Obubra community with reliable and affordable phone accessories. Located in Ofatura, Obubra Local Government Area, we understand the importance of keeping your devices protected and powered. Our commitment is simple: provide genuine products, fair prices, and excellent customer service to every person who walks through our doors or contacts us. Whether you need a replacement charger, a stylish phone case, or quality earphones, we've got you covered.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Our Products & Services</h2>
+        <p class="section-subtitle">At Naztel Communications, we stock a comprehensive range of mobile accessories to meet all your needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Phone Cases & Covers</h3>
+                <p>Protective cases for all major brands including Samsung, iPhone, Tecno, Infinix, and more</p>
+            </div>
+            <div class="service-card">
+                <h3>Chargers & Cables</h3>
+                <p>Original and high-quality compatible fast chargers, USB cables, and car chargers</p>
+            </div>
+            <div class="service-card">
+                <h3>Power Banks</h3>
+                <p>Reliable portable power solutions from 5,000mAh to 30,000mAh capacity</p>
+            </div>
+            <div class="service-card">
+                <h3>Screen Protectors</h3>
+                <p>Tempered glass and film protectors for maximum screen protection</p>
+            </div>
+            <div class="service-card">
+                <h3>Earphones & Headsets</h3>
+                <p>Wired and wireless audio accessories for calls and music</p>
+            </div>
+            <div class="service-card">
+                <h3>Phone Holders & Stands</h3>
+                <p>Car mounts, desk stands, and tripod holders</p>
+            </div>
+            <div class="service-card">
+                <h3>Memory Cards & Flash Drives</h3>
+                <p>Expand your storage with genuine memory solutions</p>
+            </div>
+            <div class="service-card">
+                <h3>Bluetooth Speakers</h3>
+                <p>Portable speakers for entertainment on the go</p>
+            </div>
+        </div>
+        <div style="margin-top: 3rem; text-align: center;">
+            <p style="font-size: 1.125rem; line-height: 1.9;">We also offer expert advice on the right accessories for your device and lifestyle.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="contact-content">
+            <h2 class="section-title">Visit Us Today</h2>
+            <p style="font-size: 1.125rem; line-height: 1.9; margin-bottom: 2rem;">Ready to upgrade your mobile experience? Visit Naztel Communications in Ofatura, Obubra Local Government Area, or contact us directly. We're here to help you find exactly what you need.</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>Ofatura, Obubra Local Government Area, Cross River State, Nigeria</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p><a href="tel:07033957054">070 3395 7054</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Business Hours</h3>
+                    <p><strong>Monday - Saturday:</strong> 8:00 AM - 7:00 PM</p>
+                    <p><strong>Sunday:</strong> 10:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.9; margin-top: 3rem;">Can't visit in person? Chat with us on WhatsApp for product inquiries, availability checks, and quick orders. We're always ready to serve you with quality products at fair prices.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Naztel Communications. All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/2347033957054" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.258 1.41 1.409-5.257-0.292-0.506c-1.225-2.163-1.87-4.588-1.87-7.070 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.227-0.401 0.257-0.747 0.083-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.021-0.533 0.152-0.707 0.156-0.155 0.346-0.401 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.574 0.117-0.227 0.058-0.428-0.028-0.603-0.087-0.174-0.776-1.87-1.063-2.565-0.28-0.672-0.56-0.58-0.776-0.591-0.2-0.012-0.428-0.014-0.657-0.014s-0.603 0.087-0.918 0.428c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.227 2.424 3.811 5.881 5.343 0.821 0.364 1.462 0.581 1.962 0.744 0.826 0.265 1.577 0.227 2.171 0.138 0.662-0.099 2.049-0.838 2.335-1.647 0.289-0.809 0.289-1.502 0.201-1.647-0.087-0.146-0.316-0.231-0.662-0.401z"/>
+    </svg>
+</a>
+
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+}
+</script>
+
+</body>
+</html>
