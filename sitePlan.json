@@ -1,0 +1,42 @@
+{
+  "businessName": "Naztel Communications",
+  "industry": "Phone Accessories & Mobile Technology",
+  "tone": "friendly",
+  "tagline": "Your Trusted Partner for Quality Mobile Accessories in Obubra",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Naztel Communications - Obubra's premier destination for authentic phone accessories. From premium screen protectors to fast chargers, power banks, earphones, phone cases, and more. We bring quality mobile technology solutions right to your doorstep in Ofatura and beyond.",
+      "imagePrompt": "Modern Nigerian phone accessories shop interior with vibrant displays of colorful phone cases, charging cables, and earphones neatly arranged on shelves, warm lighting, customers browsing, professional retail environment in Obubra, Cross River State, photorealistic, bright and inviting atmosphere",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Naztel Communications has been serving the Obubra community with reliable and affordable phone accessories. Located in Ofatura, Obubra Local Government Area, we understand the importance of keeping your devices protected and powered. Our commitment is simple: provide genuine products, fair prices, and excellent customer service to every person who walks through our doors or contacts us. Whether you need a replacement charger, a stylish phone case, or quality earphones, we've got you covered.",
+      "imagePrompt": "Warm welcoming Nigerian retail store exterior in Obubra, Cross River State, with clear Naztel Communications signage, customers entering shop, local community setting, tropical greenery, authentic African small business atmosphere, natural daylight, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Products & Services",
+      "copy": "At Naztel Communications, we stock a comprehensive range of mobile accessories to meet all your needs:\n\n• **Phone Cases & Covers** - Protective cases for all major brands including Samsung, iPhone, Tecno, Infinix, and more\n\n• **Chargers & Cables** - Original and high-quality compatible fast chargers, USB cables, and car chargers\n\n• **Power Banks** - Reliable portable power solutions from 5,000mAh to 30,000mAh capacity\n\n• **Screen Protectors** - Tempered glass and film protectors for maximum screen protection\n\n• **Earphones & Headsets** - Wired and wireless audio accessories for calls and music\n\n• **Phone Holders & Stands** - Car mounts, desk stands, and tripod holders\n\n• **Memory Cards & Flash Drives** - Expand your storage with genuine memory solutions\n\n• **Bluetooth Speakers** - Portable speakers for entertainment on the go\n\nWe also offer expert advice on the right accessories for your device and lifestyle.",
+      "imagePrompt": "Organized display of diverse phone accessories including colorful phone cases stacked neatly, various chargers and cables arranged by type, power banks of different sizes, screen protectors, earphones, all professionally merchandised in a Nigerian electronics shop, bright product photography, clean modern retail display",
+      "layout": "grid"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Us Today",
+      "copy": "Ready to upgrade your mobile experience? Visit Naztel Communications in Ofatura, Obubra Local Government Area, or contact us directly. We're here to help you find exactly what you need.\n\n**Location:** Ofatura, Obubra Local Government Area, Cross River State, Nigeria\n\n**Phone:** 070 3395 7054\n\n**Business Hours:**\nMonday - Saturday: 8:00 AM - 7:00 PM\nSunday: 10:00 AM - 5:00 PM\n\nCan't visit in person? Chat with us on WhatsApp for product inquiries, availability checks, and quick orders. We're always ready to serve you with quality products at fair prices.",
+      "imagePrompt": "Detailed map pin location marker over Obubra Local Government Area in Cross River State Nigeria, aerial view showing local roads and community, smartphone displaying contact information, professional business contact visualization, photorealistic, clear and informative",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "070 3395 7054",
+    "email": "",
+    "address": "Ofatura, Obubra Local Government Area, Cross River State, Nigeria",
+    "whatsapp": "https://wa.me/2347033957054"
+  }
+}
